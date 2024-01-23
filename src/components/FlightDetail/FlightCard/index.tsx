@@ -18,7 +18,6 @@ const FlightCard = ({ flight }: FlightCardProps) => {
     <div className="border rounded-lg p-4 mb-4">
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <img src={`/path-to-your-logo/${flight.airline.toLowerCase()}.png`} alt={flight.airline} className="h-6 w-6" />
           <p className="font-bold">{flight.airline}</p>
         </div>
         <div className="text-right">
