@@ -13,25 +13,28 @@ interface FlightCardProps {
   flight: Flight;
 }
 
-const FlightCard  = ({ flight } : FlightCardProps) => {
+const FlightCard = ({ flight }: FlightCardProps) => {
   return (
     <div className="border rounded-lg p-4 mb-4">
-      <div className="flex justify-between">
-        <div>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center space-x-2">
+          <img src={`/path-to-your-logo/${flight.airline.toLowerCase()}.png`} alt={flight.airline} className="h-6 w-6" />
           <p className="font-bold">{flight.airline}</p>
+        </div>
+        <div className="text-right">
+          <p className="text-lg font-semibold">{flight.price}</p>
+          <button className="bg-green-600 text-white py-2 px-4 rounded mt-2">Select</button>
+        </div>
+      </div>
+      <div className="flex justify-between text-gray-600 mt-2">
+        <div>
           <p>
             {flight.departureTime} - {flight.arrivalTime}
           </p>
         </div>
-        <div>
-          <p className="font-bold">{flight.price}</p>
-          <button className="bg-green-600 text-white py-2 px-4 rounded">Select</button>
+        <div className="text-right">
+          <p>{flight.duration} • {flight.stops}</p>
         </div>
-      </div>
-      <div className="text-gray-600 mt-2">
-        <p>
-          {flight.duration} • {flight.stops} stop(s)
-        </p>
       </div>
     </div>
   );
